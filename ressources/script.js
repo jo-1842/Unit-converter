@@ -49,7 +49,7 @@ const mainCont = document.querySelector(".main-ctr");
 const resultCard = document.querySelectorAll(".card")
 const resultCardP = document.querySelectorAll(".card p")
 console.log(resultCardP)
-const toggleDarkBtn = document.getElementById("dark-mode-btn")
+
 
   function darkMode(){
     mainCont.classList.toggle("dark-mode")
@@ -60,9 +60,25 @@ const toggleDarkBtn = document.getElementById("dark-mode-btn")
     for (i=0 ; i < resultCardP.length ; i++){
         resultCardP[i].classList.toggle("dark-mode-p")
     }
+     darkModeText.classList.toggle("dark-mode-p")
   }
 
 
-  toggleDarkBtn.addEventListener("click", darkMode)
+  
+ const darkModeSwitch = document.getElementById("dark-mode-switch");
+ const darkModeSwitchBtn = document.getElementById("dark-mode-switch-btn")
 
-//   "#1C1C1C";
+  function floatRight(){
+    darkModeSwitchBtn.classList.toggle("floated-right")
+
+  }
+   
+  const darkModeText= document.getElementById("dark-mode-txt")
+  
+  
+
+ function darkModeSwitched(){
+   darkMode();
+   floatRight()
+}
+  darkModeSwitch.addEventListener("click", darkModeSwitched)
